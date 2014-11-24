@@ -16,6 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- registering device admin receiver -->
+        <receiver
+            android:name=".AdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_policies" />
+        </receiver>
+
+        <activity
+            android:name=".Partner"
+            android:label="@string/title_activity_partner" >
+        </activity>
     </application>
 
 </manifest>
