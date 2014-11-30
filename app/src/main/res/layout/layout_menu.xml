@@ -1,0 +1,199 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:background="#000000"
+    >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#000000">
+
+        <TextView
+            android:id="@+id/TextView11"
+            android:layout_width="260dp"
+            android:layout_height="120dip"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#FF888888"
+            android:padding="4dip" />
+
+        <Switch
+            android:id="@+id/switch_location_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="33dp"
+            android:text="Location Track Service"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:checked="false" />
+
+        <Button
+            android:id="@+id/button_set_keyword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/switch_location_track"
+            android:layout_below="@+id/switch_location_track"
+            android:layout_marginTop="16dp"
+            android:text="Set / Change Tracking Key" />
+
+        <TextView
+            android:id="@+id/text_learn_tracking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/button_set_keyword"
+            android:layout_below="@+id/button_set_keyword"
+            android:layout_marginTop="22dp"
+            android:clickable="true"
+            android:background="@android:drawable/list_selector_background"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/text_learn_tracking"
+            android:layout_below="@+id/text_learn_tracking"
+            android:layout_marginTop="14dp"
+            android:text=" "
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/TextView11"
+            android:layout_marginTop="18dp"
+            android:text="."
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="260dp"
+            android:layout_height="200dip"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView11"
+            android:background="#FF666666"
+            android:padding="4dip" />
+
+        <TextView
+            android:id="@+id/TextViewz"
+            android:layout_width="260dp"
+            android:layout_height="200dip"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView01"
+            android:background="#FF888888"
+            android:padding="4dip" />
+
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="Set / Change Numbers"
+            android:layout_toEndOf="@+id/TextView02"
+            android:layout_below="@+id/switch_sim_change"
+            android:layout_alignStart="@+id/switch_sim_change" />
+
+        <Switch
+            android:id="@+id/switch_sim_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView02"
+            android:layout_alignTop="@+id/TextView01"
+            android:layout_marginTop="20dp"
+            android:text="Sim Change Alert"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:checked="false" />
+
+        <TextView
+            android:id="@+id/text_learn_sim_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/switch_sim_change"
+            android:layout_below="@+id/button_submit"
+            android:layout_marginTop="24dp"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:text="                                                    "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Data Erase"
+            android:id="@+id/switch_data_erase"
+            android:layout_alignTop="@+id/TextViewz"
+            android:layout_toEndOf="@+id/TextView02"
+            android:layout_marginTop="30dp"
+            android:checked="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET / CHANGE ERASE KEY"
+            android:id="@+id/button_erase_key"
+            android:layout_below="@+id/switch_data_erase"
+            android:layout_toEndOf="@+id/TextView02"
+            android:layout_marginTop="26dp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/info_tracking"
+            android:layout_toEndOf="@+id/text_learn_sim_change"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:src="@drawable/info"
+            android:layout_alignTop="@+id/button_set_keyword" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/info_sim_change"
+            android:layout_toEndOf="@+id/button_submit"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:src="@drawable/info"
+            android:layout_alignTop="@+id/button_submit"
+            android:layout_alignStart="@+id/info_tracking" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/info_erase"
+            android:layout_toEndOf="@+id/button_submit"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:src="@drawable/info"
+            android:layout_alignTop="@+id/button_erase_key"
+            android:layout_alignStart="@+id/info_sim_change" />
+
+        Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button"
+            android:layout_below="@+id/text_learn_sim_change"
+            android:layout_alignEnd="@+id/text_learn_tracking"
+            android:layout_marginTop="180dp" />
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="#00bfff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text=" "
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <requestFocus />
+
+    <EditText
+        android:id="@+id/text_new_keyword"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/text_keyword"
+        android:layout_below="@+id/text_keyword"
+        android:layout_marginTop="17dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+         android:lines="1"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+        android:maxLength="8" />
+
+    <TextView
+        android:id="@+id/text_learn_tracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/text_learn_sim_change"
+        android:layout_below="@+id/text_new_keyword"
+        android:layout_marginTop="22dp"
+        android:text="Retype new key:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/text_match_keyword"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/text_new_keyword"
+        android:layout_alignTop="@+id/text_learn_tracking"
+        android:background="#FFFFFF"
+        android:ems="10"
+         android:lines="1"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+        android:maxLength="8" />
+
+    <EditText
+        android:id="@+id/text_keyword"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:background="#FFFFFF"
+        android:ems="10"
+         android:lines="1"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+        android:maxLength="8" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_keyword"
+        android:layout_alignBottom="@+id/text_keyword"
+        android:layout_toLeftOf="@+id/text_keyword"
+        android:text="Enter Previous key:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/text_learn_sim_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_new_keyword"
+        android:layout_toLeftOf="@+id/textView2"
+        android:text="Enter new key:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_match_keyword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="SUBMIT" />
+
+</RelativeLayout>

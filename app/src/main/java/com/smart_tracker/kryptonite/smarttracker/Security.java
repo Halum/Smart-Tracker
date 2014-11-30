@@ -51,7 +51,7 @@ public class Security extends Activity {
     }
 
     private void loadNextActivity(){
-        Intent nextActivity = new Intent(this, Partner.class);
+        Intent nextActivity = new Intent(this, Menu.class);
         nextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(nextActivity);
     }

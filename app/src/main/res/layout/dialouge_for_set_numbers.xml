@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="#00bfff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text=" "
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <requestFocus />
+
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_number2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="SUBMIT" />
+
+    <EditText
+        android:id="@+id/text_number2"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/text_number1"
+        android:layout_alignTop="@+id/text_learn_tracking"
+        android:background="#FFFFFF"
+        android:ems="10"
+           android:lines="1"
+        android:digits="0123456789" 
+        android:maxLength="15" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_number1"
+        android:layout_toLeftOf="@+id/text_number1"
+        android:text="Number 01:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/text_number1"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/button_submit"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginLeft="14dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:maxLength="15" 
+           android:lines="1"
+        android:digits="0123456789" 
+        android:focusable="true"/>
+
+    <TextView
+        android:id="@+id/text_learn_tracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_number1"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/text_number1"
+        android:text="Number 02:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
