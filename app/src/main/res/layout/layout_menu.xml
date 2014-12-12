@@ -10,17 +10,22 @@
         android:id="@+id/RelativeLayout01"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#000000">
+        android:background="#BBB">
 
         <TextView
             android:id="@+id/TextView11"
             android:layout_width="260dp"
             android:layout_height="120dip"
+
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="4dp"
             android:layout_alignBottom="@+id/textView2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:background="#FF888888"
+            android:background="@drawable/card_bg"
             android:padding="4dip" />
 
         <Switch
@@ -82,10 +87,14 @@
             android:layout_width="260dp"
             android:layout_height="200dip"
 
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="4dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/TextView11"
-            android:background="#FF666666"
+            android:background="@drawable/card_bg"
             android:padding="4dip" />
 
         <TextView
@@ -93,10 +102,14 @@
             android:layout_width="260dp"
             android:layout_height="200dip"
 
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="4dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/TextView01"
-            android:background="#FF888888"
+            android:background="@drawable/card_bg"
             android:padding="4dip" />
 
         <Button
@@ -184,15 +197,6 @@
             android:src="@drawable/info"
             android:layout_alignTop="@+id/button_erase_key"
             android:layout_alignStart="@+id/info_sim_change" />
-
-        Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button"
-            android:layout_below="@+id/text_learn_sim_change"
-            android:layout_alignEnd="@+id/text_learn_tracking"
-            android:layout_marginTop="180dp" />
 
     </RelativeLayout>
 
