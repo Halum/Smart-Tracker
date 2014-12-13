@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 public class DataManager extends Activity {
     private static final String APP_DATABASE = "SMART_TRACKER";
     private static final String PASSWORD_KEY = "password";
+    private static final String ENCRYPTION_KEY = "the key is hard to get";
 
     private static SharedPreferences database;
     private static SharedPreferences.Editor databaseEditor;
@@ -20,10 +21,15 @@ public class DataManager extends Activity {
     }
 
     public static void setPassword(Activity context, String pass){
-        database = context.getSharedPreferences(APP_DATABASE, MODE_PRIVATE);
-        databaseEditor = database.edit();
-        databaseEditor.putString(PASSWORD_KEY, pass);
-        databaseEditor.commit();
+        try {
+            database = context.getSharedPreferences(APP_DATABASE, MODE_PRIVATE);
+            databaseEditor = database.edit();
+            pass = Encryptor.encrypt(ENCRYPTION_KEY, pass);
+            databaseEditor.putString(PASSWORD_KEY, pass);
+            databaseEditor.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void removePassword(Activity context){
@@ -36,7 +42,12 @@ public class DataManager extends Activity {
     public static boolean doesPasswordMatch(Activity context, String givenPass){
         database = context.getSharedPreferences(APP_DATABASE, MODE_PRIVATE);
         String savedPass = database.getString(PASSWORD_KEY, null);
-
-        return savedPass.equals(givenPass);
+        try {
+            givenPass = Encryptor.encrypt(ENCRYPTION_KEY, givenPass);
+            return savedPass.equals(givenPass);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

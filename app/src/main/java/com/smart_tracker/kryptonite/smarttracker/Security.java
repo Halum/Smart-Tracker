@@ -33,7 +33,11 @@ public class Security extends Activity {
             this.alert("Password doesn't match");
         }else{
             DataManager.setPassword(this, newPassword);
-            this.loadNextActivity();
+            if(DataManager.isPasswordProtected(this)) {
+                this.loadNextActivity();
+            }else{
+                this.alert("Internal error, try again");
+            }
         }
     }
 

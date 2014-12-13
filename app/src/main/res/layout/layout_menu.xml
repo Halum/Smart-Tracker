@@ -48,7 +48,8 @@
             android:layout_alignLeft="@+id/switch_location_track"
             android:layout_below="@+id/switch_location_track"
             android:layout_marginTop="16dp"
-            android:text="Set / Change Tracking Key" />
+            android:text="Set / Change Tracking Key"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/text_learn_tracking"
@@ -119,8 +120,11 @@
             android:layout_marginTop="22dp"
             android:text="Set / Change Numbers"
             android:layout_toEndOf="@+id/TextView02"
+            android:layout_toRightOf="@+id/TextView02"
             android:layout_below="@+id/switch_sim_change"
-            android:layout_alignStart="@+id/switch_sim_change" />
+            android:layout_alignStart="@+id/switch_sim_change"
+            android:layout_alignLeft="@+id/switch_sim_change"
+            android:textSize="14sp" />
 
         <Switch
             android:id="@+id/switch_sim_change"
@@ -154,23 +158,27 @@
             android:id="@+id/switch_data_erase"
             android:layout_alignTop="@+id/TextViewz"
             android:layout_toEndOf="@+id/TextView02"
+            android:layout_toRightOf="@+id/TextView02"
             android:layout_marginTop="30dp"
             android:checked="false" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SET / CHANGE ERASE KEY"
+            android:text="Set / Change Erase Key"
             android:id="@+id/button_erase_key"
             android:layout_below="@+id/switch_data_erase"
             android:layout_toEndOf="@+id/TextView02"
-            android:layout_marginTop="26dp" />
+            android:layout_toRightOf="@+id/TextView02"
+            android:layout_marginTop="26dp"
+            android:textSize="14sp" />
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/info_tracking"
             android:layout_toEndOf="@+id/text_learn_sim_change"
+            android:layout_toRightOf="@+id/text_learn_sim_change"
             android:background="@android:drawable/list_selector_background"
             android:clickable="true"
             android:src="@drawable/info"
@@ -181,22 +189,26 @@
             android:layout_height="40dp"
             android:id="@+id/info_sim_change"
             android:layout_toEndOf="@+id/button_submit"
+            android:layout_toRightOf="@+id/button_submit"
             android:background="@android:drawable/list_selector_background"
             android:clickable="true"
             android:src="@drawable/info"
             android:layout_alignTop="@+id/button_submit"
-            android:layout_alignStart="@+id/info_tracking" />
+            android:layout_alignStart="@+id/info_tracking"
+            android:layout_alignLeft="@+id/info_tracking" />
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/info_erase"
             android:layout_toEndOf="@+id/button_submit"
+            android:layout_toRightOf="@+id/button_submit"
             android:background="@android:drawable/list_selector_background"
             android:clickable="true"
             android:src="@drawable/info"
             android:layout_alignTop="@+id/button_erase_key"
-            android:layout_alignStart="@+id/info_sim_change" />
+            android:layout_alignStart="@+id/info_sim_change"
+            android:layout_alignLeft="@+id/info_sim_change"/>
 
     </RelativeLayout>
 
