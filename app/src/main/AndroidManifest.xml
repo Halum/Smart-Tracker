@@ -37,8 +37,7 @@
         </activity>
 
         <activity
-            android:name=".Menu"
-            android:label="Menu" >
+            android:name=".Menu">
         </activity>
 
         <receiver

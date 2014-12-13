@@ -17,6 +17,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -40,9 +42,13 @@ public class Menu extends Activity implements CompoundButton.OnCheckedChangeList
     ImageView info_sim_change;
     ImageView info_erase;
 
+    private boolean isPaused = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.makeFullScreen();
 
         setContentView(R.layout.layout_menu);
 
@@ -120,10 +126,12 @@ public class Menu extends Activity implements CompoundButton.OnCheckedChangeList
     }
 
 
-
-
-
-
+    private void makeFullScreen(){
+        // Erase the title bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        // Make it full Screen
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
@@ -132,7 +140,6 @@ public class Menu extends Activity implements CompoundButton.OnCheckedChangeList
 
             switch (buttonView.getId())
             {
-
                 case R.id.switch_location_track:
 
                     String keyword = getSharedPreferences("PATH", Context.MODE_PRIVATE).getString("keyword", "***");
@@ -141,10 +148,8 @@ public class Menu extends Activity implements CompoundButton.OnCheckedChangeList
                     if(keyword.toLowerCase().contains("***".toLowerCase()))
                     {
                         setKeyword();
-
                     }
-                    else
-                    {
+                    else{
                         getSharedPreferences("PATH", MODE_PRIVATE)
                                 .edit().putString("track_switch", "on")
                                 .commit();
@@ -964,7 +969,6 @@ public class Menu extends Activity implements CompoundButton.OnCheckedChangeList
                             match_keyword.requestFocus();
                         }
                     }
-
                 }
                 else
                 {
@@ -972,12 +976,22 @@ public class Menu extends Activity implements CompoundButton.OnCheckedChangeList
                     prev_keyword.requestFocus();
 
                 }
-
-
-                //
             }
         });
+    }
 
+    @Override
+    protected void onResume(){
+        if(this.isPaused) {
+            Intent nextActivity = new Intent(this, Security.class);
+            nextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(nextActivity);
+        }
+        super.onResume();
+    }
 
+    @Override protected void onPause(){
+        this.isPaused = true;
+        super.onPause();
     }
 }
