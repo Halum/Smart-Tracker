@@ -121,7 +121,7 @@ public class Menu extends Activity implements CompoundButton.OnCheckedChangeList
         registerReceiver(receiver2, filter2);
 
         // requesting admin permission for app
-        if(AdminManager.isAdmin(this)==false)
+        if(!AdminManager.isAdmin(this))
             AdminManager.askForAdminPermission(this);
     }
 

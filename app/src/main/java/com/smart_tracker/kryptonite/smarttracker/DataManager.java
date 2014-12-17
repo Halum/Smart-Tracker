@@ -17,7 +17,7 @@ public class DataManager extends Activity {
     public static boolean isPasswordProtected(Activity context){
         database = context.getSharedPreferences(APP_DATABASE, MODE_PRIVATE);
 
-        return database.getString(PASSWORD_KEY, null)==null ? false : true;
+        return database.getString(PASSWORD_KEY, null) != null;
     }
 
     public static void setPassword(Activity context, String pass){
@@ -26,17 +26,59 @@ public class DataManager extends Activity {
             databaseEditor = database.edit();
             pass = Encryptor.encrypt(ENCRYPTION_KEY, pass);
             databaseEditor.putString(PASSWORD_KEY, pass);
-            databaseEditor.commit();
+            databaseEditor.apply();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void storeData(Activity context, String key, String value){
+        database = context.getSharedPreferences(APP_DATABASE, MODE_PRIVATE);
+        databaseEditor = database.edit();
+
+        try {
+            key = Encryptor.encrypt(ENCRYPTION_KEY, key);
+            value = Encryptor.encrypt(ENCRYPTION_KEY, value);
+            databaseEditor.putString(key, value);
+            databaseEditor.apply();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String retriveData(Activity context, String key){
+        database = context.getSharedPreferences(APP_DATABASE, MODE_PRIVATE);
+        String value = null;
+
+        try {
+            key = Encryptor.encrypt(ENCRYPTION_KEY, key);
+            value = database.getString(key, null);
+            value = Encryptor.decrypt(ENCRYPTION_KEY, value);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return value;
     }
 
     public static void removePassword(Activity context){
         database = context.getSharedPreferences(APP_DATABASE, MODE_PRIVATE);
         databaseEditor = database.edit();
         databaseEditor.remove(PASSWORD_KEY);
-        databaseEditor.commit();
+        databaseEditor.apply();
+    }
+
+    public static boolean isDataExists(Activity context, String key){
+        database = context.getSharedPreferences(APP_DATABASE, MODE_PRIVATE);
+        String value;
+        try {
+            key = Encryptor.encrypt(ENCRYPTION_KEY, key);
+            value = database.getString(key, null);
+            return value != null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public static boolean doesPasswordMatch(Activity context, String givenPass){
